@@ -1,0 +1,38 @@
+body {
+	background-image: url("images/train.jpeg");
+	-webkit-background-size: cover;
+  	-moz-background-size: cover;
+  	-o-background-size: cover;
+  	background-size: cover;
+}
+
+.page-header {
+	padding: 0 290px;
+	border-bottom: none;
+}
+
+
+
+form {
+	position: fixed;
+	bottom: 0;
+	padding: 20px 180px;
+	left: 0;
+	width: 100%;
+	background: rgb(204, 204, 204); /* Fallback for older browsers without RGBA-support */
+    background: rgba(204, 204, 204, 0.5);
+}
+
+.row {
+	margin: 0;
+}
+
+.form-group {
+	display: inline-block;
+	margin: 0 1%;
+}
+
+#canvas {
+	background-color: transparent;
+	margin: 0 42%;
+}
