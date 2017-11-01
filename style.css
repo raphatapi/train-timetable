@@ -11,14 +11,46 @@ body {
 	border-bottom: none;
 }
 
+h2 {
+	text-align: center;
+	font-weight: bolder;
+	padding: 1% 0;
+	font-family: 'Alfa Slab One', cursive;
+	letter-spacing: 2px;
+}
 
+.displays {
+    padding: 30px;
+    border: 10px solid #ccc;
+    background-color: #222;
+    border-radius: 30px;
+    box-shadow: 0 0 12px 4px #000 inset;
+}
+
+div.activity {
+    width: 12px;
+    height: 12px;
+    border-radius: 6px;
+    background-color: #250000;
+    position: relative;
+    top: 33px;
+    left: -15px;
+}
+
+div.activity.active {
+    background-color: #f00;
+}
 
 form {
-	position: fixed;
+	position: relative;
 	bottom: 0;
-	padding: 20px 180px;
+	padding: 20px 20px;
+	border-radius: 5px;
+	margin-top: 2%;
+	margin-bottom: 1%;
 	left: 0;
 	width: 100%;
+	font-family: 'Graduate', cursive;
 	background: rgb(204, 204, 204); /* Fallback for older browsers without RGBA-support */
     background: rgba(204, 204, 204, 0.5);
 }
@@ -32,7 +64,11 @@ form {
 	margin: 0 1%;
 }
 
+#add-train {
+	margin-top: 10%;
+}
+
 #canvas {
 	background-color: transparent;
-	margin: 0 42%;
+	margin: 0 43%;
 }

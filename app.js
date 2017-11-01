@@ -44,27 +44,9 @@ $(document).ready(function(){
 	var tMinutes = frequency - tRemainder;
 	var nextTrain = moment().add(tMinutes, "minutes");
 	
-	var numberNew = $("<td>");
-	numberNew.text(data.number);
-	var destinationNew = $("<td>");
-	destinationNew.text(data.destination);
-	var frequencyNew = $("<td>");
-	frequencyNew.text(data.frequency);
-	var minutesNew = $("<td>");
-	minutesNew.text(tMinutes);
-	var nextNew = $("<td>");
-	nextNew.text(nextTrain.format("HH:mm"));
-
-	var row = $("<tr>");
-	row.append(numberNew);
-	row.append(destinationNew);
-	row.append(frequencyNew);
-	row.append(nextNew);
-	row.append(minutesNew);
-
-	$("#train").append(row);
-	$("#train").flapper().val(row.val()).change();
-
+	
+	$(".display").val(data.number + " / " + data.destination + " / " + data.frequency + " / " + tMinutes + " / " + nextTrain.format("LT")).change();
+	
     }, function(errorObject) {
       console.log("The read failed: " + errorObject.code);
     });
@@ -151,27 +133,3 @@ $(document).ready(function(){
 	}
 
 });
-
-//FLAPPER DISPLAY
-
-// $(document).ready(function(){
-// var$header_display=$('#header_display');
-// $header_display.flapper({
-// width:7,
-// chars_preset:'alpha'
-// });
-
-// setTimeout(function(){
-// $header_display.val('FLAPPER').change();
-// vartoggle=true;
-// setInterval(function(){
-// if(toggle){
-// $header_display.val('FLAPPER').change();
-// }else{
-// $header_display.val('').change();
-// }
-// toggle=!toggle;
-// },5000);
-// },1000);
-
-// });
