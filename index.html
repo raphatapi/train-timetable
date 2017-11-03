@@ -32,34 +32,15 @@
 		</div>
 		<div class="row">
 			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-        <h2>Next Trains</h2>
-				<!-- <div class="panel panel-default">
-					<div class="panel-heading">
-						
-					</div> -->
-					<!-- <div class="panel-body">
-						<div class="panel-heading"> -->
-              <div class="displays">
-                <div class="activity"></div><input class="display S" />
-                <div class="activity"></div><input class="display S" />
-                <div class="activity"></div><input class="display S" />
-                <div class="activity"></div><input class="display S" />
-                <div class="activity"></div><input class="display S" />
-                <div class="activity"></div><input class="display S" />
-            </div>
-							<!-- <table id="train" class="displays text-left" style="width:100%">
-								<tr style="border-bottom: 1px solid gray;">
-								    <th>Train Number</th>
-								    <th>Destination</th> 
-								    <th>Frequency</th>
-								    <th>Next Train</th>
-								    <th>Minutes Away</th>
-								</tr>
-                <tr id="results"></tr> -->
-							<!-- </table>
-						</div>
-					</div> -->
-				<!-- </div> -->
+		        <h2>Next Trains</h2>
+				<div class="displays">
+					<div class="activity"></div><input id="1" class="display S" />
+					<div class="activity"></div><input id="2" class="display S" />
+					<div class="activity"></div><input id="3" class="display S" />
+					<div class="activity"></div><input id="4" class="display S" />
+					<div class="activity"></div><input id="5" class="display S" />
+					<div class="activity"></div><input id="6" class="display S" />
+				</div>
 			</div>
 		</div>
 		<div class="row">
@@ -67,19 +48,19 @@
 				<form>
 					<div class="form-group">
 						<label for="term">Train Number</label>
-						<input type="term" class="form-control" id="number-input">
+						<input type="text" maxlength="4" class="form-control" id="number-input" required>
 					</div>
 					<div class="form-group">
-						<label for="term">Destination</label>
-						<input type="term" class="form-control" id="destination-input">
+						<label for="term">Destination (3 Letter City)</label>
+						<input type="text" maxlength="3" class="form-control" id="destination-input" required>
 					</div>
 					<div class="form-group">
 						<label for="term">First Train Time (HH:mm - military time)</label>
-						<input type="term" class="form-control" id="time-input">
+						<input type="term" class="form-control" id="time-input" required>
 					</div>
 					<div class="form-group">
 						<label for="term">Frequency (min)</label>
-						<input type="term" class="form-control" id="frequency-input">
+						<input type="term" class="form-control" id="frequency-input" required>
 					</div>
 					<div class="form-group">
 						<button id="add-train" class="btn btn-primary btn-md">Add Train</button>

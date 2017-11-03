@@ -1,4 +1,15 @@
+var count = 0;
 
+$("#add-train").attr("disabled",true);
+$(document).on("keyup", ".form-control", function(event) {
+	if( $.trim($(this).val()).length > 0){
+            $("#add-train").attr("disabled", false);            
+        }
+        
+        else {
+            $("#add-train").attr("disabled",true);
+        }
+})
 
 $(document).ready(function(){
 	$('#display').flapper().val("Travel Rail").change();
@@ -23,7 +34,10 @@ $(document).ready(function(){
       var destinationInput = $("#destination-input").val().trim();
       var timeInput = $("#time-input").val().trim();
       var frequencyInput = $("#frequency-input").val().trim();
+      numberInput
+      $(".form-control").val("");
       
+            
       database.ref().push({
         number: numberInput,
         destination: destinationInput,
@@ -32,6 +46,17 @@ $(document).ready(function(){
       });
 
     });
+
+    $("#add-train").attr("disabled",true);
+		$(document).on("keyup", ".form-control", function(event) {
+			if( $.trim($(".form-control").val()).length > 0){
+		            $("#add-train").attr("disabled", false);            
+		        }
+		        
+		        else {
+		            $("#add-train").attr("disabled",true);
+		        }
+		})
 
     database.ref().on("child_added", function(snapshot) {
       //MomentJS
@@ -43,10 +68,26 @@ $(document).ready(function(){
 	var tRemainder = diffTime % frequency;
 	var tMinutes = frequency - tRemainder;
 	var nextTrain = moment().add(tMinutes, "minutes");
-	
-	
-	$(".display").val(data.number + " / " + data.destination + " / " + data.frequency + " / " + tMinutes + " / " + nextTrain.format("LT")).change();
-	
+	count++
+		if (count > 6){
+			count = 1;
+		};
+
+	var trainNumber = data.number;
+	var formattedTrainNumber = ("000" + trainNumber).slice(-4);
+
+	var trainDestination = data.destination.toUpperCase();
+	var formattedTrainDestination = ("XXX" + trainDestination).slice(-3);
+	console.log(formattedTrainDestination);
+
+	var trainFrequency = data.frequency;
+	var formattedTrainFrequency = ("0" + trainFrequency).slice(-2);
+
+	var trainMinutes = tMinutes;
+	var formattedTrainMinutes = ("0" + trainMinutes).slice(-2);
+
+	$("#" + count).val(formattedTrainNumber + " / " + formattedTrainDestination + " / " + formattedTrainFrequency + " / " + formattedTrainMinutes + " /" + nextTrain.format("LT")).change();
+
     }, function(errorObject) {
       console.log("The read failed: " + errorObject.code);
     });
