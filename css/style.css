@@ -1,5 +1,5 @@
 body {
-	background-image: url("images/train.jpeg");
+	background-image: url("../images/train.jpeg");
 	-webkit-background-size: cover;
   	-moz-background-size: cover;
   	-o-background-size: cover;
@@ -13,10 +13,17 @@ body {
 
 h2 {
 	text-align: center;
-	font-weight: bolder;
+	font-weight: bold;
 	padding: 1% 0;
 	font-family: 'Alfa Slab One', cursive;
-	letter-spacing: 2px;
+	text-shadow: 4px 4px 4px #aaa;
+	letter-spacing: 3px;
+}
+
+table {
+	width: 100%;
+	font-size: large;
+	color: #ccc;
 }
 
 .displays {
@@ -51,6 +58,7 @@ form {
 	left: 0;
 	width: 100%;
 	font-family: 'Graduate', cursive;
+	font-weight: bold;
 	background: rgb(204, 204, 204); /* Fallback for older browsers without RGBA-support */
     background: rgba(204, 204, 204, 0.5);
 }
@@ -64,7 +72,7 @@ form {
 	margin: 0 1%;
 }
 
-#add-train {
+#add-train, #reset {
 	margin-top: 10%;
 }
 

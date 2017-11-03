@@ -4,8 +4,8 @@
 	<title>Travel Rail</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-	<link rel="stylesheet" type="text/css" href="style.css">
 	<link rel="stylesheet" type="text/css" href="css/flapper.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<link href="https://fonts.googleapis.com/css?family=Alfa+Slab+One|Graduate" rel="stylesheet">
 	<script src="https://www.gstatic.com/firebasejs/4.6.0/firebase.js"></script>
 	<script
@@ -15,7 +15,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/egjs-jquery-transform/2.0.0/transform.js"></script>
   <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
-	<script type="text/javascript" src="app.js"></script>
+	<script type="text/javascript" src="src/app.js"></script>
   <script src="src/flapdemo.js"></script>
   <script src="src/jquery.flapper.js"></script>
 </head>
@@ -32,8 +32,17 @@
 		</div>
 		<div class="row">
 			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-		        <h2>Next Trains</h2>
+				<h2>Next Trains</h2>
 				<div class="displays">
+					<table class="panel-head">
+						<tr>
+							<th class="topic">Train Number</th>
+							<th class="topic">Destination</th>
+							<th class="topic">Frequency</th>
+							<th class="topic">Minutes to Next</th>
+							<th class="topic">Next Train</th>
+						</tr>
+					</table>
 					<div class="activity"></div><input id="1" class="display S" />
 					<div class="activity"></div><input id="2" class="display S" />
 					<div class="activity"></div><input id="3" class="display S" />
@@ -64,8 +73,8 @@
 					</div>
 					<div class="form-group">
 						<button id="add-train" class="btn btn-primary btn-md">Add Train</button>
+						<button id="reset" class="btn btn-primary btn-md">Clear Results</button>
 					</div>
-					<!-- <button class="btn btn-primary btn-md"><span class="glyphicon glyphicon-trash"></span> Clear Results</button> -->
 				</form>
 			</div>
 		</div>

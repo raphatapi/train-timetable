@@ -34,7 +34,7 @@ $(document).ready(function(){
       var destinationInput = $("#destination-input").val().trim();
       var timeInput = $("#time-input").val().trim();
       var frequencyInput = $("#frequency-input").val().trim();
-      numberInput
+      
       $(".form-control").val("");
       
             
@@ -58,6 +58,10 @@ $(document).ready(function(){
 		        }
 		})
 
+	$("#reset").on("click", function(){
+		$(".form-control").val("");
+	})
+
     database.ref().on("child_added", function(snapshot) {
       //MomentJS
 	var data = snapshot.val();
@@ -78,7 +82,6 @@ $(document).ready(function(){
 
 	var trainDestination = data.destination.toUpperCase();
 	var formattedTrainDestination = ("XXX" + trainDestination).slice(-3);
-	console.log(formattedTrainDestination);
 
 	var trainFrequency = data.frequency;
 	var formattedTrainFrequency = ("0" + trainFrequency).slice(-2);
@@ -86,7 +89,7 @@ $(document).ready(function(){
 	var trainMinutes = tMinutes;
 	var formattedTrainMinutes = ("0" + trainMinutes).slice(-2);
 
-	$("#" + count).val(formattedTrainNumber + " / " + formattedTrainDestination + " / " + formattedTrainFrequency + " / " + formattedTrainMinutes + " /" + nextTrain.format("LT")).change();
+	$("#" + count).val(formattedTrainNumber + " / " + formattedTrainDestination + " / " + formattedTrainFrequency + " / " + formattedTrainMinutes + " /" + nextTrain.format("hh:mm A")).change();
 
     }, function(errorObject) {
       console.log("The read failed: " + errorObject.code);
