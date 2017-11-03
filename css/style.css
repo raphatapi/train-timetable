@@ -52,7 +52,7 @@ form {
 	position: relative;
 	bottom: 0;
 	padding: 20px 20px;
-	border-radius: 5px;
+	border-radius: 15px;
 	margin-top: 2%;
 	margin-bottom: 1%;
 	left: 0;
@@ -60,7 +60,7 @@ form {
 	font-family: 'Graduate', cursive;
 	font-weight: bold;
 	background: rgb(204, 204, 204); /* Fallback for older browsers without RGBA-support */
-    background: rgba(204, 204, 204, 0.5);
+    background: rgba(204, 204, 204, 0.8);
 }
 
 .row {
