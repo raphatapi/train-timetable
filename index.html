@@ -3,11 +3,13 @@
 <head>
 	<title>Travel Rail</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- <meta http-equiv="refresh" content="30"/> -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" href="css/flapper.css">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<link href="https://fonts.googleapis.com/css?family=Alfa+Slab+One|Graduate" rel="stylesheet">
 	<script src="https://www.gstatic.com/firebasejs/4.6.0/firebase.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/4.6.0/firebase-auth.js"></script>
 	<script
   src="https://code.jquery.com/jquery-3.2.1.js"
   integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
@@ -26,8 +28,9 @@
 				<div id="display" class="page-header">
 					<h1 class="text-center">Travel Rail</h1>
 				</div>
-        <canvas id="canvas">
-        </canvas>
+				<div>
+					<canvas id="canvas"></canvas>
+				</div>
 			</div>
 		</div>
 		<div class="row">

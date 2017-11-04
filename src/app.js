@@ -1,14 +1,19 @@
 var count = 0;
 
 $("#add-train").attr("disabled",true);
-$(document).on("keyup", ".form-control", function(event) {
-	if( $.trim($(this).val()).length > 0){
-            $("#add-train").attr("disabled", false);            
-        }
-        
-        else {
-            $("#add-train").attr("disabled",true);
-        }
+	$(document).on("keyup", ".form-control", function(event) {
+		if( $.trim($("#number-input").val()).length > 0 && $.trim($("#destination-input").val()).length > 0 && $.trim($("#time-input").val()).length > 0 && $.trim($("#frequency-input").val()).length > 0){
+	            $("#add-train").attr("disabled", false);            
+	        }
+	        
+	        else {
+	            $("#add-train").attr("disabled",true);
+	        }
+	})
+
+$("#reset").on("click", function(){
+	$(".form-control").val("");
+	$("#add-train").attr("disabled",true);
 })
 
 $(document).ready(function(){
@@ -49,7 +54,7 @@ $(document).ready(function(){
 
     $("#add-train").attr("disabled",true);
 		$(document).on("keyup", ".form-control", function(event) {
-			if( $.trim($(".form-control").val()).length > 0){
+			if( $.trim($("#number-input").val()).length > 0 && $.trim($("#destination-input").val()).length > 0 && $.trim($("#time-input").val()).length > 0 && $.trim($("#frequency-input").val()).length > 0){
 		            $("#add-train").attr("disabled", false);            
 		        }
 		        
@@ -60,6 +65,7 @@ $(document).ready(function(){
 
 	$("#reset").on("click", function(){
 		$(".form-control").val("");
+		$("#add-train").attr("disabled",true);
 	})
 
     database.ref().on("child_added", function(snapshot) {
@@ -90,6 +96,10 @@ $(document).ready(function(){
 	var formattedTrainMinutes = ("0" + trainMinutes).slice(-2);
 
 	$("#" + count).val(formattedTrainNumber + " / " + formattedTrainDestination + " / " + formattedTrainFrequency + " / " + formattedTrainMinutes + " /" + nextTrain.format("hh:mm A")).change();
+
+	// setTimeout(function() {
+	//   location.reload();
+	// }, 20000);
 
     }, function(errorObject) {
       console.log("The read failed: " + errorObject.code);
