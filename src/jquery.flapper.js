@@ -34,7 +34,7 @@
             padding: ' ',
             chars: null,
             chars_preset: 'alphanum',
-            timing: 350,
+            timing: 300,
             min_timing: 10,
             threshhold: 100,
             transform: true,

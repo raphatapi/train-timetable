@@ -97,9 +97,9 @@ $(document).ready(function(){
 
 	$("#" + count).val(formattedTrainNumber + " / " + formattedTrainDestination + " / " + formattedTrainFrequency + " / " + formattedTrainMinutes + " /" + nextTrain.format("hh:mm A")).change();
 
-	// setTimeout(function() {
-	//   location.reload();
-	// }, 20000);
+	setTimeout(function() {
+	  location.reload();
+	}, 60000);
 
     }, function(errorObject) {
       console.log("The read failed: " + errorObject.code);
