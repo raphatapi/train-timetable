@@ -1,5 +1,5 @@
 # train-timetable
 
-Train Timetable :digital clock:
+Train Timetable :clock2:
 
 ![Preventative Gif](giphy.gif)
